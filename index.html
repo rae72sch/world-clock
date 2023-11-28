@@ -3,12 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <title>World Clock Project</title>
   </head>
   <body>
-    <h1>World Clock</h1>
-    <footer>Coded by Rachel Schofield and open sourced on <a href="https://github.com/rae72sch/world-clock" target="_blank">GitHub</a></footer>
+    <div class="container">
+      <h1>World Clocks</h1>
+
+      <select id="cities">
+        <option value="">Select a city...</option>
+        <option value="london">Dublin</option>
+        <option value="boston">Boston</option>
+        <option value="perth">Perth</option>
+      </select>
+
+      <div class="city">
+        <h2>Dublin 🇮🇪</h2>
+        <div class="date">November 27th 2023</div>
+        <div class="time">9:23:36am</div>
+      </div>
+      <div class="city">
+        <h2>Boston 🇺🇸</h2>
+        <div class="date">November 27th 2023</div>
+        <div class="time">5:23:36am</div>
+      </div>
+      <div class="city">
+        <h2>Perth 🇦🇺</h2>
+        <div class="date">November 27th 2023</div>
+        <div class="time">7:23:36pm</div>
+      </div>
+    </div>
+    <footer>
+      Coded by Rachel Schofield and open sourced on
+      <a href="https://github.com/rae72sch/world-clock" target="_blank"
+        >GitHub</a
+      >
+    </footer>
+
     <script src="src/index.js"></script>
   </body>
 </html>
