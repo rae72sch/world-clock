@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>World Clocks</h1>
+      <h1>World Clock</h1> 
 
       <select id="city">
         <option value="">Select a city...</option>
@@ -21,27 +21,29 @@
       </select>
 
       <div id="cities">
-        <div class="city" id="dublin">
+        <div class="city" id="current">
           <div>
-            <h2>Dublin 🇮🇪</h2>
+            <h2 id="current-tz"></h2>
             <div class="date"></div>
           </div>
           <div class="time"><small>AM</small></div>
         </div>
         <div class="city" id="chicago">
           <div>
-            <h2>Chicago 🇺🇸</h2>
+            <h2>Chicago</h2>
             <div class="date">November 28th 2023</div>
           </div>
           <div class="time">5:23:36 <small>AM</small></div>
         </div>
+        <div class="difference" id="tz-difference-chicago"></div>
         <div class="city" id="perth">
           <div>
-            <h2>Perth 🇦🇺</h2>
+            <h2>Perth</h2>
             <div class="date">November 28th 2023</div>
           </div>
           <div class="time">7:23:36 <small>PM</small></div>
         </div>
+        <div class="difference" id="tz-difference-perth"></div>
       </div>
     </div>
     <footer>
