@@ -42,11 +42,19 @@ footer {
   margin: 10px 0;
   justify-content: space-between;
   padding-top: 30px;
-  
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.city:last-child {
+  border: none;
+}
+
+.current-header small {
+  font-size: 16px;
 }
 
 #current {
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  
   padding-bottom: 30px;
 }
 
@@ -67,14 +75,8 @@ footer {
 }
 
 .difference {
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  /* border-bottom: 1px dashed rgba(0, 0, 0, 0.2); */
   padding-bottom: 30px;
 }
 
-.difference-bottom {
-  padding-bottom: 30px;
-}
 
-.difference:last-child {
-  border: none;
-}

@@ -7,7 +7,6 @@ function updateTime() {
     let currentDateElement = document.querySelector("#current .date");
     let currentTimeElement = document.querySelector("#current .time");
 
-    // let dublinData = moment().tz("Europe/Dublin");
     let currentTimezone = moment.tz.guess();
     let currentData = moment().tz(currentTimezone);
 
@@ -62,7 +61,6 @@ function timezoneDiff(searchTimezone) {
   let localTimezone = moment.tz.guess();
   let localTime = moment().tz(localTimezone);
   let localOffset = localTime.utcOffset();
-  console.log(localOffset);
   let searchCityTime = moment().tz(searchTimezone);
   let searchCityOffset = searchCityTime.utcOffset();
   let diffInMinutes = searchCityOffset - localOffset;
@@ -72,32 +70,37 @@ function timezoneDiff(searchTimezone) {
 
 // Update the displayed city when a user selects a city
 function updateCity(event) {
+  // get the current timezone and info to be interpolated into the below current city 
+  // (the top one) and see if it speeds up loading and doesn't refresh seconds
+  let currentTimezone = moment.tz.guess();
+  let currentTime = moment().tz(currentTimezone);
+
   let cityTimezone = event.target.value;
-  if (cityTimezone === "current") {
-    cityTimezone = moment.tz.guess();
-  }
   let cityName = cityTimezone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimezone);
   let citiesElement = document.querySelector("#cities");
   let timeDifference = timezoneDiff(cityTimezone);
   citiesElement.innerHTML = `
-  <div class="city" id="current">
+  <div class="city">
     <div>
-      <h2 id="current-tz"></h2>
-      <div class="date"></div>
+      <h2 class="current-header">Current Timezone <br><small>(${currentTimezone})</h2>
+      <div class="date">${currentTime.format("MMMM Do YYYY")}</div>
     </div>
-    <div class="time"><small>AM</small></div>
+    <div class="time">${currentTime.format(
+      "h:mm:ss"
+    )} <small>${currentTime.format("A")}</small></div>
   </div>
+    
   <div class="city">
     <div>
       <h2>${cityName}</h2>
       <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+      <div class="difference">Difference from current timezone: ${timeDifference} hours</div>
     </div>
-    <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format(
+    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
     "A"
   )}</small></div>
     </div>
-    <div class="difference-bottom">Difference from current timezone: ${timeDifference} hours</div>
     <a href="/">All cities</a>
   `;
 }
@@ -107,9 +110,3 @@ setInterval(updateTime, 1000);
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
-
-// call the updateCity function in each city, passing it the timezone for that city
-// change the function to return the difference, not log it to the console
-// Put the returned figure into a sentence in the innerHTML for the default cities
-// Do the same for the selected city's innerHTML
-// Change the dublin code to local

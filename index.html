@@ -14,7 +14,6 @@
 
       <select id="city">
         <option value="">Select a city...</option>
-        <option value="current">My current timezone</option>
         <option value="Europe/London">London</option>
         <option value="America/New_York">New York</option>
         <option value="Australia/Brisbane">Brisbane</option>
@@ -23,27 +22,30 @@
       <div id="cities">
         <div class="city" id="current">
           <div>
-            <h2 id="current-tz"></h2>
+            <h2 class="current-header" id="current-tz"></h2>
             <div class="date"></div>
           </div>
           <div class="time"><small>AM</small></div>
         </div>
+
         <div class="city" id="chicago">
           <div>
             <h2>Chicago</h2>
-            <div class="date">November 28th 2023</div>
+            <div class="date"></div>
+             <div class="difference" id="tz-difference-chicago"></div>
           </div>
-          <div class="time">5:23:36 <small>AM</small></div>
+          <div class="time"> <small></small></div>
         </div>
-        <div class="difference" id="tz-difference-chicago"></div>
+
         <div class="city" id="perth">
           <div>
             <h2>Perth</h2>
-            <div class="date">November 28th 2023</div>
+            <div class="date"></div>
+            <div class="difference" id="tz-difference-perth"></div>
           </div>
-          <div class="time">7:23:36 <small>PM</small></div>
+          <div class="time"> <small></small></div>
         </div>
-        <div class="difference" id="tz-difference-perth"></div>
+        
       </div>
     </div>
     <footer>
