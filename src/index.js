@@ -1,4 +1,3 @@
-// Dublin
 function updateTime() {
   // Current Timezone
   let currentElement = document.querySelector("#current");
@@ -10,7 +9,7 @@ function updateTime() {
     let currentTimezone = moment.tz.guess();
     let currentData = moment().tz(currentTimezone);
 
-    currentTimezoneElement.innerHTML = `Current Timezone <br><small>(${currentTimezone})</small>`;
+    currentTimezoneElement.innerHTML = `<h2>Current Timezone</h2> <h3>(${currentTimezone})</h3>`;
     currentDateElement.innerHTML = currentData.format("MMMM Do YYYY");
     currentTimeElement.innerHTML = currentData.format(
       "h:mm:ss [<small>]A[</small>]"
@@ -83,7 +82,8 @@ function updateCity(event) {
   citiesElement.innerHTML = `
   <div class="city">
     <div>
-      <h2 class="current-header">Current Timezone <br><small>(${currentTimezone})</h2>
+      <h2 class="current-header">Current Timezone</h2>
+      <h3>(${currentTimezone})</h3>
       <div class="date">${currentTime.format("MMMM Do YYYY")}</div>
     </div>
     <div class="time">${currentTime.format(
@@ -93,7 +93,8 @@ function updateCity(event) {
     
   <div class="city">
     <div>
-      <h2>${cityName}</h2>
+      <h2>${cityName}</h2> 
+      <h3>(${cityTimezone})</h3>
       <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
       <div class="difference">Difference from current timezone: ${timeDifference} hours</div>
     </div>
