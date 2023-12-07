@@ -65,7 +65,7 @@ footer {
   display: flex;
   margin: 10px 0;
   justify-content: space-between;
-  padding: 30px 0;
+  padding: 30px 0 20px;
   border-bottom: 1px dashed rgba( 86, 63, 163, 0.4);
 }
 
