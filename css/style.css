@@ -45,7 +45,7 @@ footer {
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 }
 
-.city:last-child {
+.city:last-of-type {
   border: none;
 }
 
@@ -54,7 +54,6 @@ footer {
 }
 
 #current {
-  
   padding-bottom: 30px;
 }
 
